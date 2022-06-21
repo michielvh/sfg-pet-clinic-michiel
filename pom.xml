@@ -14,7 +14,7 @@
   </parent>
   <groupId>michiel.springframework</groupId>
   <artifactId>sfg-pet-clinic-michiel</artifactId>
-  <version>0.0.2-SNAPSHOT</version>
+  <version>0.0.2</version>
   <name>sfg-pet-clinic-michiel</name>
   <description>sfg-pet-clinic-michiel</description>
   <properties>
@@ -41,6 +41,7 @@
           <checkModificationExcludes>
             <checkModificationExclude>pom.xml</checkModificationExclude>
           </checkModificationExcludes>
+          <autoVersionSubmodules>true</autoVersionSubmodules>
         </configuration>
       </plugin>
     </plugins>
@@ -49,6 +50,6 @@
   <scm>
     <!-- this maybe needs to be configuered with ssh instead of with https. check springframework 5: beginner to guru video 49 minute 7 -->
     <developerConnection>scm:git:https://github.com/michielvh/sfg-pet-clinic-michiel.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>sfg-pet-clinic-michiel-0.0.2</tag>
   </scm>
 </project>
