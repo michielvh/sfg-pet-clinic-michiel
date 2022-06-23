@@ -5,7 +5,7 @@ import michiel.springframework.sfgpetclinicmichiel.model.Vet;
 import michiel.springframework.sfgpetclinicmichiel.services.CrudService;
 import michiel.springframework.sfgpetclinicmichiel.services.VetService;
 
-public class VetServiceMap extends AbstractMapService<Vet,Long> implements CrudService<Vet,Long> {
+public class VetServiceMap extends AbstractMapService<Vet,Long> implements VetService {
 
     @Override
     public Set<Vet> findAll() {
