@@ -1,23 +1,28 @@
 package michiel.springframework.sfgpetclinicmichiel.bootstrap;
 
-import java.security.acl.Owner;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import michiel.springframework.sfgpetclinicmichiel.model.Owner;
+import michiel.springframework.sfgpetclinicmichiel.model.Vet;
 import michiel.springframework.sfgpetclinicmichiel.services.OwnerService;
 import michiel.springframework.sfgpetclinicmichiel.services.VetService;
-import michiel.springframework.sfgpetclinicmichiel.services.map.OwnerServiceMap;
-import michiel.springframework.sfgpetclinicmichiel.services.map.VetServiceMap;
+
 
 @Component
 public class DataLoader implements CommandLineRunner {
 
-    private final OwnerService ownerService;
-    private final VetService vetService;
 
-    public DataLoader() {
-        ownerService = new OwnerServiceMap();
-        vetService = new VetServiceMap();
+
+    private final OwnerService ownerService;
+    private final VetService   vetService;
+
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
+
+
 
     @Override
     public void run(String... args) throws Exception {

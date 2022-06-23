@@ -1,10 +1,12 @@
 package michiel.springframework.sfgpetclinicmichiel.services.map;
 
 import java.util.Set;
+import org.springframework.stereotype.Service;
 import michiel.springframework.sfgpetclinicmichiel.model.Vet;
 import michiel.springframework.sfgpetclinicmichiel.services.CrudService;
 import michiel.springframework.sfgpetclinicmichiel.services.VetService;
 
+@Service
 public class VetServiceMap extends AbstractMapService<Vet,Long> implements VetService {
 
     @Override
