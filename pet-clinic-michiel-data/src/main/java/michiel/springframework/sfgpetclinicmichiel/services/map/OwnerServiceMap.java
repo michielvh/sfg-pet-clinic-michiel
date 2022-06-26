@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import michiel.springframework.sfgpetclinicmichiel.model.Owner;
 import michiel.springframework.sfgpetclinicmichiel.services.OwnerService;
 
+// Door bij elke mothode Super.method() te doen, wordt er door de claas dat dit implementeert gekozen of het een abstractmapservice is
+// of een CrudService  op basis van initialisation of profiles
 @Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 

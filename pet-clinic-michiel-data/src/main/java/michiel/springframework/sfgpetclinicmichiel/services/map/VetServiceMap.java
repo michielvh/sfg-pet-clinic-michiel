@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import michiel.springframework.sfgpetclinicmichiel.model.Vet;
 import michiel.springframework.sfgpetclinicmichiel.services.CrudService;
 import michiel.springframework.sfgpetclinicmichiel.services.VetService;
+// Door bij elke mothode Super.method() te doen, wordt er door de claas dat dit implementeert gekozen of het een abstractmapservice is
+// of een CrudService  op basis van initialisation of profiles
 
 @Service
 public class VetServiceMap extends AbstractMapService<Vet,Long> implements VetService {

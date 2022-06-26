@@ -2,17 +2,17 @@ package michiel.springframework.sfgpetclinicmichiel.services.map;
 
 import java.util.Set;
 import org.springframework.stereotype.Service;
-import michiel.springframework.sfgpetclinicmichiel.model.Pet;
-import michiel.springframework.sfgpetclinicmichiel.services.CrudService;
-import michiel.springframework.sfgpetclinicmichiel.services.PetService;
+import michiel.springframework.sfgpetclinicmichiel.model.PetType;
+import michiel.springframework.sfgpetclinicmichiel.services.PetTypeService;
 
 // Door bij elke mothode Super.method() te doen, wordt er door de claas dat dit implementeert gekozen of het een abstractmapservice is
 // of een CrudService  op basis van initialisation of profiles
+
 @Service
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
+public class PetTypeMapService extends AbstractMapService<PetType ,Long> implements PetTypeService{
 
     @Override
-    public Set<Pet> findAll() {
+    public Set<PetType> findAll() {
         return super.findAll();
     }
 
@@ -22,18 +22,17 @@ public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetS
     }
 
     @Override
-    public void delete(Pet object) {
+    public void delete(PetType object) {
         super.delete(object);
     }
 
     @Override
-    public Pet save(Pet object) {
-
+    public PetType save(PetType object) {
         return super.save(object);
     }
 
     @Override
-    public Pet findById(Long id) {
+    public PetType findById(Long id) {
         return super.findById(id);
     }
 }
