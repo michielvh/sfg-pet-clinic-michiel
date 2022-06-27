@@ -1,6 +1,7 @@
 package michiel.springframework.sfgpetclinicmichiel.services.map;
 
 import java.util.Set;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import michiel.springframework.sfgpetclinicmichiel.model.Specialty;
 import michiel.springframework.sfgpetclinicmichiel.model.Vet;
@@ -10,6 +11,7 @@ import michiel.springframework.sfgpetclinicmichiel.services.VetService;
 // of een CrudService  op basis van initialisation of profiles
 
 @Service
+@Profile({"default","map"})
 public class VetMapService extends AbstractMapService<Vet,Long> implements VetService {
 
     private final SpecialtyService specialtyService;
