@@ -1,8 +1,17 @@
 package michiel.springframework.sfgpetclinicmichiel.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
-public class Speciality extends BaseEntity {
+/**
+ * Created by jt on 7/29/18.
+ */
+@Entity
+@Table(name = "specialties")
+public class Specialty extends BaseEntity {
 
+    @Column(name = "description")
     private String description;
 
     public String getDescription() {
