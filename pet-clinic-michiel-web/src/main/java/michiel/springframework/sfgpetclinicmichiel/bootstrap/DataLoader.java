@@ -8,10 +8,12 @@ import michiel.springframework.sfgpetclinicmichiel.model.Pet;
 import michiel.springframework.sfgpetclinicmichiel.model.PetType;
 import michiel.springframework.sfgpetclinicmichiel.model.Specialty;
 import michiel.springframework.sfgpetclinicmichiel.model.Vet;
+import michiel.springframework.sfgpetclinicmichiel.model.Visit;
 import michiel.springframework.sfgpetclinicmichiel.services.OwnerService;
 import michiel.springframework.sfgpetclinicmichiel.services.PetTypeService;
 import michiel.springframework.sfgpetclinicmichiel.services.SpecialtyService;
 import michiel.springframework.sfgpetclinicmichiel.services.VetService;
+import michiel.springframework.sfgpetclinicmichiel.services.VisitService;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -20,13 +22,15 @@ public class DataLoader implements CommandLineRunner {
     private final VetService     vetService;
     private final PetTypeService   petTypeService;
     private final SpecialtyService specialtyService;
+    private final VisitService visitService;
 
     public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService,
-            SpecialtyService specialtyService) {
+            SpecialtyService specialtyService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialtyService = specialtyService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -95,6 +99,14 @@ public class DataLoader implements CommandLineRunner {
                 .add(fionasCat);
 
         ownerService.save(owner2);
+
+        Visit catVisit = new Visit();
+        catVisit.setPet(fionasCat);
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("Sneezy Kitty");
+
+        visitService.save(catVisit);
+
 
         System.out.println("Loaded Owners....");
 
