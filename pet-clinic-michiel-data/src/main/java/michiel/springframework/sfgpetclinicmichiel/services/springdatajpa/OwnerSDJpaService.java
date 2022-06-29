@@ -37,7 +37,8 @@ public class OwnerSDJpaService implements OwnerService {
     public Set<Owner> findAll() {
         Set<Owner> owners = new HashSet<>();
         // Adds each found owner in repo to set owners
-        ownerRepository.findAll().forEach(owners::add);
+        ownerRepository.findAll()
+                .forEach(owners::add);
         return owners;
     }
 
@@ -45,7 +46,8 @@ public class OwnerSDJpaService implements OwnerService {
     public Owner findById(Long aLong) {
         //  FindById(id) returns "Optional<Owner>" -> by using or else we check for null value, which if false,
         //  makes the Optional<Owner> -> Owner class
-        return ownerRepository.findById(aLong).orElse(null);
+        return ownerRepository.findById(aLong)
+                .orElse(null);
     }
 
     @Override
